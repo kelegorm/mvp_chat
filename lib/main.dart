@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show SystemChrome, SystemUiOverlayStyle;
 import 'package:mvp_chat/welcome_page/welcome_page.dart';
 
 void main() {

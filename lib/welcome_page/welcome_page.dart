@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle;
+import 'package:mvp_chat/registration_page/registration_page.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
 
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,7 @@ class WelcomePage extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton(
-                      onPressed: () {  },
+                      onPressed: _on_getStartedPressed,
                       // style: FilledButton.styleFrom(backgroundColor: Colors.blue,),
                       child: Text('Get Started'),
                     ),
@@ -40,6 +46,13 @@ class WelcomePage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _on_getStartedPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => RegistrationPage()),
     );
   }
 }
