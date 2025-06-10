@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_chat/login_page/login_page.dart';
+import 'package:mvp_chat/registration_page/registration_page.dart';
 
-class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<RegistrationPage> createState() => _RegistrationPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Image.asset('assets/images/registration_banner.png'),
+          Image.asset('assets/images/login_banner.png'),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   Text(
-                    'Registration',
+                    'Login',
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   SizedBox(height: 16),
@@ -43,18 +43,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Nickname',
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: SizedBox(
                       width: double.infinity,
                       child: FilledButton(
-                        onPressed: _on_registerPressed,
+                        onPressed: _on_loginPressed,
                         // style: FilledButton.styleFrom(backgroundColor: Colors.blue,),
                         child: Text('Register'),
                       ),
@@ -64,10 +56,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Already have account?'),
+                      Text("Don't have an account?"),
                       TextButton(
-                        onPressed: _on_alreadyRegisteredPressed,
-                        child: Text('Login'),
+                        onPressed: _on_notRegisteredPressed,
+                        child: Text('Sign up'),
                       ),
                     ],
                   ),
@@ -80,14 +72,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 
-  void _on_registerPressed() {
+  void _on_loginPressed() {
 
   }
 
-  void _on_alreadyRegisteredPressed() {
+  void _on_notRegisteredPressed() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginPage()),
+      MaterialPageRoute(builder: (context) => RegistrationPage()),
     );
   }
 }
