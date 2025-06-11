@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_chat/login_page/login_page.dart';
+import 'package:mvp_chat/widgets/auth_form_field.dart';
 import 'package:mvp_chat/widgets/big_blue_button.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -26,29 +27,17 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   SizedBox(height: 16),
-                  Padding(
+                  AuthFormField(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Email',
-                      ),
-                    ),
+                    hint: 'Email',
                   ),
-                  Padding(
+                  AuthFormField(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Password',
-                      ),
-                    ),
+                    hint: 'Password',
                   ),
-                  Padding(
+                  AuthFormField(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Nickname',
-                      ),
-                    ),
+                    hint: 'Nickname',
                   ),
                   BigBlueButton(
                     padding: const EdgeInsets.symmetric(vertical: 12),
