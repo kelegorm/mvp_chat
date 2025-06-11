@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_chat/registration_page/registration_page.dart';
+import 'package:mvp_chat/widgets/big_blue_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
           Image.asset('assets/images/login_banner.png'),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
                   Text(
@@ -41,16 +42,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  Padding(
+                  BigBlueButton(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: FilledButton(
-                        onPressed: _on_loginPressed,
-                        // style: FilledButton.styleFrom(backgroundColor: Colors.blue,),
-                        child: Text('Register'),
-                      ),
-                    ),
+                    label: 'Login',
+                    onPressed: _on_loginPressed,
                   ),
                   Expanded(child: Container()),
                   Row(

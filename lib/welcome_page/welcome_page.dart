@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemUiOverlayStyle;
 import 'package:mvp_chat/registration_page/registration_page.dart';
+import 'package:mvp_chat/widgets/big_blue_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -32,13 +33,9 @@ class _WelcomePageState extends State<WelcomePage> {
                     textAlign: TextAlign.center,
                   ),
                   Expanded(child: Container()),
-                  SizedBox(
-                    width: double.infinity,
-                    child: FilledButton(
-                      onPressed: _on_getStartedPressed,
-                      // style: FilledButton.styleFrom(backgroundColor: Colors.blue,),
-                      child: Text('Get Started'),
-                    ),
+                  BigBlueButton(
+                    label: 'Get Started',
+                    onPressed: _on_getStartedPressed,
                   ),
                 ],
               ),
