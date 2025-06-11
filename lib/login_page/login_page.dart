@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_chat/chats_list_page/chats_list_page.dart';
 import 'package:mvp_chat/registration_page/registration_page.dart';
 import 'package:mvp_chat/widgets/auth_form_field.dart';
 import 'package:mvp_chat/widgets/big_blue_button.dart';
@@ -61,7 +62,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _on_loginPressed() {
-
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => ChatsListPage()),
+    );
   }
 
   void _on_notRegisteredPressed() {
